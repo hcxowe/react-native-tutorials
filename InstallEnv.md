@@ -29,7 +29,7 @@
 ### 设置环境变量
 
 1. 确保`ANDROID_HOME`环境变量正确地指向了你安装的Android SDK的路径
-2. 确保`JAVA_HOME`环境变量正确地指向了你安装的JDK的路径
+2. 确保`JAVA_HOME`环境变量正确地指向了你安装的JDK的路径 - [配置](https://jingyan.baidu.com/article/6dad5075d1dc40a123e36ea3.html)
 
 ### 测试
 
