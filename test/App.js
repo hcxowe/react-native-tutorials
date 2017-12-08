@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
+	Platform,
+	StyleSheet,
+	Text,
+	View,
+  Image
 } from 'react-native';
+
+import Greeting from './src/components/Greeting'
+import Blink from './src/components/Blink'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -14,38 +18,36 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component<{}> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
-    );
-  }
+	render() {
+		let pic = {
+			uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
+		};
+
+    	return (
+      		<View style={ styles.container }>
+        		<Text style={ styles.welcome }>Hello World!</Text>
+				<Image source={ pic } style={ styles.pic }></Image>
+				<Greeting name="hcxowe"></Greeting>
+				<Blink text={ ['I', 'LOVE', 'YOU'] } time={ 500 }></Blink>
+      		</View>
+    	);
+  	}
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+	container: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: '#F5FCFF',
+  	},
+  	welcome: {
+		fontSize: 20,
+		textAlign: 'center',
+		margin: 10,
+  	},
+  	pic: {
+		width: 193,
+		height: 110
+	}
 });
