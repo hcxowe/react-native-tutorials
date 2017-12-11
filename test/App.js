@@ -4,7 +4,8 @@ import {
 	StyleSheet,
 	Text,
 	View,
-  Image
+  Image,
+	TextInput
 } from 'react-native';
 
 import Greeting from './src/components/Greeting'
@@ -24,11 +25,23 @@ export default class App extends Component<{}> {
 		};
 
     	return (
-      		<View style={ styles.container }>
-        		<Text style={ styles.welcome }>Hello World!</Text>
-				<Image source={ pic } style={ styles.pic }></Image>
-				<Greeting name="hcxowe"></Greeting>
-				<Blink text={ ['I', 'LOVE', 'YOU'] } time={ 500 }></Blink>
+					<View style={ styles.container }>
+						<View style={ {flex: 1, width: '100%', flexDirection: 'row', justifyContent:'space-between', alignItems: 'center'} }>
+							<Text style={ {textAlign: 'left', backgroundColor:'#ccc'} }>Hello World!</Text>
+							<Text style={ {textAlign: 'left', backgroundColor:'#ccc'} }>Hello World!</Text>
+							<Text style={ {textAlign: 'left', backgroundColor:'#ccc'} }>Hello World!</Text>
+						</View>
+						<View style={ {flex:1, alignItems: 'center'} }>
+							<Image source={ pic } style={ [styles.pic, {flex:1, alignItems: 'center'}] }></Image>
+						</View>
+						<View style={ {flex:1, alignItems: 'stretch'} }>
+							<TextInput style={ {height: 40} } placeholder="please input something？"></TextInput>
+							<Text></Text>
+						</View>
+						<View style={ {flex:1, alignItems: 'center'} }>
+							<Greeting name="hcxowe"></Greeting>
+							<Blink text={ ['I', 'LOVE', 'YOU'] } time={ 500 }></Blink>
+						</View>
       		</View>
     	);
   	}
@@ -37,16 +50,12 @@ export default class App extends Component<{}> {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: 'center',
+		flexDirection: 'column',
+		justifyContent: 'space-between',
 		alignItems: 'center',
 		backgroundColor: '#F5FCFF',
-  	},
-  	welcome: {
-		fontSize: 20,
-		textAlign: 'center',
-		margin: 10,
-  	},
-  	pic: {
+	},
+	pic: {
 		width: 193,
 		height: 110
 	}
